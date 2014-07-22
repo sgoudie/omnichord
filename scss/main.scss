@@ -3,7 +3,7 @@
 @import 'typography';
 
 body{
-	background-color:#231F20;
+	background-color:lighten(#231F20, 5%);
 	color:#F5E5C0;
 }
 
@@ -17,7 +17,7 @@ body{
 	list-style:none;
 	padding:0;
 	float:left;
-	margin: 0 25px;
+	margin: 50px 25px;
 }
 
 .trigger{
@@ -38,6 +38,10 @@ body{
 
 .diminished .trigger{
 	background-color:#57768C;
+}
+
+.controls{
+	margin-top:100px;
 }
 
 a{

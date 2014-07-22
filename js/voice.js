@@ -1,6 +1,9 @@
 //Voice Controls
 
-//Amp Envelope
+//Main Amp
+masterGain = 1;
+
+//Voice Amp Envelope
 releaseTime = 1;
 attackTime = 1;
 
@@ -29,6 +32,8 @@ osc3Gain = 0.2;
 osc3OctUD = 1; //0 - octave goes down, 1 - octave goes up
 osc3Oct = 4; //(1 for base, 2 for 1 octave, 4 for 2 octaves etc)
 osc3Detune = 0;
+
+
 
 		
 		

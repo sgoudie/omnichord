@@ -8,7 +8,7 @@ p {
   line-height: 16px; }
 
 body {
-  background-color: #231F20;
+  background-color: #312b2c;
   color: #F5E5C0; }
 
 .container {
@@ -20,7 +20,7 @@ body {
   list-style: none;
   padding: 0;
   float: left;
-  margin: 0 25px; }
+  margin: 50px 25px; }
 
 .trigger {
   width: 50px;
@@ -40,6 +40,9 @@ body {
 
 .diminished .trigger {
   background-color: #57768C; }
+
+.controls {
+  margin-top: 100px; }
 
 a {
   text-decoration: none;

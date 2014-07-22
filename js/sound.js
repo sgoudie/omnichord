@@ -14,6 +14,7 @@ $(document).ready(function(){
 		lfo = context.createOscillator(),
 		lfoAmp = context.createGain();
 		gainNode = context.createGain();
+		mGain = context.createGain();
 		
 		baseFrequency = notes[target.data("note")];
 
@@ -47,6 +48,8 @@ $(document).ready(function(){
 		gain2.gain.value = osc2Gain;
 		gain3.gain.value = osc3Gain;
 
+		mGain.gain.value = masterGain;
+
 		lfoAmp.gain.value = lfoStrength; //strength of lfo
 
 		lfo.connect(lfoAmp);
@@ -61,7 +64,8 @@ $(document).ready(function(){
 		gain1.connect(gainNode);
 		gain2.connect(gainNode);
 		gain3.connect(gainNode);
-		gainNode.connect(context.destination);
+		gainNode.connect(mGain);
+		mGain.connect(context.destination);
 
 		osc1.noteOn(0);
 		osc2.noteOn(0);
@@ -78,6 +82,7 @@ $(document).ready(function(){
 		gainNode.gain.linearRampToValueAtTime(0.6, now + attackTime);
 
 		currentGain = gainNode;
+		currentmGain = mGain;
 		};
 
 	var stopNote = function (){
@@ -98,6 +103,24 @@ $(document).ready(function(){
 	});
 
 	$(".trigger").mouseleave(function(){
-	    stopNote();
+		stopNote();
 	});
+
+	$(function() {
+        $(".dial").knob({
+        	'min':0,
+        	'max':11,
+        	'width':100,
+        	'displayPrevious':true,
+        	'font': 'Montserrat',
+        	'fontWeight': 400,
+        	'fgColor':"#F5E5C0",
+        	'bgColor':"#231F20",
+        	'change': function(value){
+				masterGain = value/10;
+				console.log("Master Gain : " + masterGain);
+			}
+        });
+    });
+
 });
