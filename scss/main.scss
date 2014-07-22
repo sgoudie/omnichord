@@ -1,0 +1,49 @@
+@import 'config';
+@import 'mixins';
+@import 'typography';
+
+body{
+	background-color:#231F20;
+	color:#F5E5C0;
+}
+
+.container{
+	text-align:center;
+	width:700px;
+	margin: 50px auto 0 auto;
+}
+
+.chord{
+	list-style:none;
+	padding:0;
+	float:left;
+	margin: 0 25px;
+}
+
+.trigger{
+	width: 50px;
+	height: 25px;
+	background: #000;
+	margin-bottom:1px;
+	@include border-radius(5px);
+}
+
+.major .trigger{
+	background-color:#F8CA4D;
+}
+
+.minor .trigger{
+	background-color:#EA6045;
+}
+
+.diminished .trigger{
+	background-color:#57768C;
+}
+
+a{
+	text-decoration:none;
+	color:$primary-color;
+	&:hover{
+		color: darken( $primary-color, 10%);
+	}
+}
